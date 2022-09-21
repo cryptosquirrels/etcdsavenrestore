@@ -1,0 +1,8 @@
+
+
+
+ETCDCTL_API=3 etcdctl --endpoints https://10.0.1.102:2379 --cacert=etcd-ca.pem --cert=etcd-server.crt --key=etcd-server.key snapshot save /home/user/etcd_backup.db
+
+sudo systemctl stop etcd
+
+ETCDCTL_API=3 etcdctl --endpoints https://10.0.1.102:2379 --cacert=etcd-ca.pem --cert=etcd-server.crt --key=etcd-server.key snapshot restore /home/user/etcd_backup.db
